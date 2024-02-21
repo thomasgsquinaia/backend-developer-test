@@ -22,7 +22,7 @@ describe("Should test Companies", () => {
         const company_id = "6532742c-4176-48da-9c4a-35df2acdbfdb"
         const foundCompany = await Companies.findByPk(company_id);
         expect(foundCompany).toBeDefined();
-        expect(foundCompany.id).toBe(company_id);
+        expect(foundCompany).toBe(company_id);
     });
     it('Should test dont find by id', async () => {
         const company_id = "6532742c-4176-48da-9c4a-35df2acdbfd1"
