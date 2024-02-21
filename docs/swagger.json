@@ -1117,7 +1117,7 @@
         "tags": [
           "feed"
         ],
-        "description": "Endpoint to list file from AWS or cache.",
+        "description": "Endpoint to list file from cache.",
         "responses": {
           "200": {
             "description": "OK"
