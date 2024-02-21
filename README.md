@@ -72,7 +72,7 @@ GET /v1/feed/generateFeed - Generate Feed.
 
 ## Documentation
 
-After clicking on the link, change the "Servers" to "http://ec2-54-94-2-165.sa-east-1.compute.amazonaws.com" to avoid any problems.
+After clicking on the link *[documentation](http://ec2-54-94-2-165.sa-east-1.compute.amazonaws.com/v1/doc/)*, change the "Servers" to "http://ec2-54-94-2-165.sa-east-1.compute.amazonaws.com" to avoid any problems.
 
 ```bash
 http://ec2-54-94-2-165.sa-east-1.compute.amazonaws.com/v1/doc/
