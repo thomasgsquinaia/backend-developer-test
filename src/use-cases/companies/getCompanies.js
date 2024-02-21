@@ -5,8 +5,8 @@ module.exports={
         try{
             const companies = await Companies.findAll()
             if(!companies) {
-                throw (
-                    {message:"Companies were not found!", 
+                throw ({
+                    message:"Companies were not found!", 
                     status: 404
                 });
             }

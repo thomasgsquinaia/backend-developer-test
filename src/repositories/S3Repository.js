@@ -1,5 +1,4 @@
 const { S3Client, GetObjectCommand, PutObjectCommand }=require('@aws-sdk/client-s3')
-const fs=require("fs")
 class S3Repository {
     constructor() {
         const region=process.env.AWS_REGION ? process.env.AWS_REGION: 'sa-east-1'

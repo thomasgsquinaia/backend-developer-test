@@ -1,0 +1,1605 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0",
+    "title": "PlooralApiRestTest",
+    "description": "API REST Test Plooral"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3001",
+      "description": "LocalTest"
+    },
+    {
+      "url": "http://ec2-54-94-2-165.sa-east-1.compute.amazonaws.com",
+      "description": "LocalProd"
+    }
+  ],
+  "tags": [
+    {
+      "name": "companies",
+      "description": "Endpoints of companies"
+    },
+    {
+      "name": "jobs",
+      "description": "Endpoint of jobs"
+    },
+    {
+      "name": "feed",
+      "description": "Endpoint of feed"
+    }
+  ],
+  "paths": {
+    "/v1/jobs/": {
+      "post": {
+        "tags": [
+          "jobs"
+        ],
+        "description": "Endpoint to create a job posting draft.",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "example": "177e8dcf-02d9-47c5-9671-8d3369c0ec56"
+                    },
+                    "status": {
+                      "type": "string",
+                      "example": "draft"
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "example": "2024-02-16T02:18:41.517Z"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "example": "2024-02-16T02:18:41.517Z"
+                    },
+                    "company_id": {
+                      "type": "string",
+                      "example": "38028bfc-a6fe-40cb-b8d3-9529541fd376"
+                    },
+                    "title": {
+                      "type": "string",
+                      "example": "Dev C++"
+                    },
+                    "description": {
+                      "type": "string",
+                      "example": "c plus plus"
+                    },
+                    "location": {
+                      "type": "string",
+                      "example": "Remote"
+                    },
+                    "notes": {
+                      "type": "string",
+                      "example": "A"
+                    },
+                    "updatedAt": {
+                      "type": "string",
+                      "example": "2024-02-16T02:18:41.517Z"
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "example": "2024-02-16T02:18:41.517Z"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "example": "177e8dcf-02d9-47c5-9671-8d3369c0ec56"
+                    },
+                    "status": {
+                      "type": "string",
+                      "example": "draft"
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "example": "2024-02-16T02:18:41.517Z"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "example": "2024-02-16T02:18:41.517Z"
+                    },
+                    "company_id": {
+                      "type": "string",
+                      "example": "38028bfc-a6fe-40cb-b8d3-9529541fd376"
+                    },
+                    "title": {
+                      "type": "string",
+                      "example": "Dev C++"
+                    },
+                    "description": {
+                      "type": "string",
+                      "example": "c plus plus"
+                    },
+                    "location": {
+                      "type": "string",
+                      "example": "Remote"
+                    },
+                    "notes": {
+                      "type": "string",
+                      "example": "A"
+                    },
+                    "updatedAt": {
+                      "type": "string",
+                      "example": "2024-02-16T02:18:41.517Z"
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "example": "2024-02-16T02:18:41.517Z"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "'company_id is not found"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 400
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "'company_id is not found"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 400
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "ERROR"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 500
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "ERROR"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 500
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "token": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "company_id": {
+                    "example": "any"
+                  },
+                  "title": {
+                    "example": "any"
+                  },
+                  "description": {
+                    "example": "any"
+                  },
+                  "location": {
+                    "example": "any"
+                  },
+                  "notes": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/jobs/{job_id}/publish": {
+      "put": {
+        "tags": [
+          "jobs"
+        ],
+        "description": "Endpoint to create a publish a job posting draft.",
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Job is published"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Job is published"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Job Status draft!"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 400
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Job Status draft!"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 400
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "ERROR"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 500
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "ERROR"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 500
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "token": []
+          }
+        ]
+      }
+    },
+    "/v1/jobs/{job_id}": {
+      "put": {
+        "tags": [
+          "jobs"
+        ],
+        "description": "Endpoint to edit a job posting draft (title, location, description).",
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "example": "4bf6e131-740e-4aad-8d98-7956cbd24d3e"
+                    },
+                    "company_id": {
+                      "type": "string",
+                      "example": "2ee5582c-b34c-4a48-af9f-3f2c4c5d4df4"
+                    },
+                    "title": {
+                      "type": "string",
+                      "example": "Dev Mid Level Java II"
+                    },
+                    "description": {
+                      "type": "string",
+                      "example": "description test"
+                    },
+                    "location": {
+                      "type": "string",
+                      "example": "Remote"
+                    },
+                    "notes": {
+                      "type": "string",
+                      "example": "A"
+                    },
+                    "status": {
+                      "type": "string",
+                      "example": "draft"
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "example": "2024-02-16T19:21:26.525Z"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "example": "2024-02-16T19:21:26.525Z"
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "example": "2024-02-16T19:21:26.525Z"
+                    },
+                    "updatedAt": {
+                      "type": "string",
+                      "example": "2024-02-16T19:21:38.020Z"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "example": "4bf6e131-740e-4aad-8d98-7956cbd24d3e"
+                    },
+                    "company_id": {
+                      "type": "string",
+                      "example": "2ee5582c-b34c-4a48-af9f-3f2c4c5d4df4"
+                    },
+                    "title": {
+                      "type": "string",
+                      "example": "Dev Mid Level Java II"
+                    },
+                    "description": {
+                      "type": "string",
+                      "example": "description test"
+                    },
+                    "location": {
+                      "type": "string",
+                      "example": "Remote"
+                    },
+                    "notes": {
+                      "type": "string",
+                      "example": "A"
+                    },
+                    "status": {
+                      "type": "string",
+                      "example": "draft"
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "example": "2024-02-16T19:21:26.525Z"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "example": "2024-02-16T19:21:26.525Z"
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "example": "2024-02-16T19:21:26.525Z"
+                    },
+                    "updatedAt": {
+                      "type": "string",
+                      "example": "2024-02-16T19:21:38.020Z"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Job not is found"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 400
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Job not is found"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 400
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "ERROR"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 500
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "ERROR"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 500
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "token": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "example": "any"
+                  },
+                  "location": {
+                    "example": "any"
+                  },
+                  "description": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "jobs"
+        ],
+        "description": "Endpoint to delete a job posting draft.",
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "example": "4bf6e131-740e-4aad-8d98-7956cbd24d3e"
+                    },
+                    "company_id": {
+                      "type": "string",
+                      "example": "2ee5582c-b34c-4a48-af9f-3f2c4c5d4df4"
+                    },
+                    "title": {
+                      "type": "string",
+                      "example": "Dev Mid Level Java II"
+                    },
+                    "description": {
+                      "type": "string",
+                      "example": "description test"
+                    },
+                    "location": {
+                      "type": "string",
+                      "example": "Remote"
+                    },
+                    "notes": {
+                      "type": "string",
+                      "example": "A"
+                    },
+                    "status": {
+                      "type": "string",
+                      "example": "draft"
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "example": "2024-02-16T19:21:26.525Z"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "example": "2024-02-16T19:22:49.075Z"
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "example": "2024-02-16T19:21:26.525Z"
+                    },
+                    "updatedAt": {
+                      "type": "string",
+                      "example": "2024-02-16T19:22:49.075Z"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "example": "4bf6e131-740e-4aad-8d98-7956cbd24d3e"
+                    },
+                    "company_id": {
+                      "type": "string",
+                      "example": "2ee5582c-b34c-4a48-af9f-3f2c4c5d4df4"
+                    },
+                    "title": {
+                      "type": "string",
+                      "example": "Dev Mid Level Java II"
+                    },
+                    "description": {
+                      "type": "string",
+                      "example": "description test"
+                    },
+                    "location": {
+                      "type": "string",
+                      "example": "Remote"
+                    },
+                    "notes": {
+                      "type": "string",
+                      "example": "A"
+                    },
+                    "status": {
+                      "type": "string",
+                      "example": "draft"
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "example": "2024-02-16T19:21:26.525Z"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "example": "2024-02-16T19:22:49.075Z"
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "example": "2024-02-16T19:21:26.525Z"
+                    },
+                    "updatedAt": {
+                      "type": "string",
+                      "example": "2024-02-16T19:22:49.075Z"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Job is not find!"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 400
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Job is not find!"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 400
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            },
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Job Status draft!"
+                },
+                "status": {
+                  "type": "number",
+                  "example": 400
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "ERROR"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 500
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "ERROR"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 500
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "token": []
+          }
+        ]
+      }
+    },
+    "/v1/jobs/{job_id}/archive": {
+      "put": {
+        "tags": [
+          "jobs"
+        ],
+        "description": "Endpoint to archive an active job posting.",
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "example": "08c04a8d-94b4-4136-ad4c-db9c73eb7197"
+                    },
+                    "company_id": {
+                      "type": "string",
+                      "example": "2ee5582c-b34c-4a48-af9f-3f2c4c5d4df4"
+                    },
+                    "title": {
+                      "type": "string",
+                      "example": "Dev C++"
+                    },
+                    "description": {
+                      "type": "string",
+                      "example": "C++"
+                    },
+                    "location": {
+                      "type": "string",
+                      "example": "Remote"
+                    },
+                    "notes": {
+                      "type": "string",
+                      "example": "A"
+                    },
+                    "status": {
+                      "type": "string",
+                      "example": "archived"
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "example": "2024-02-16T14:30:18.585Z"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "example": "2024-02-16T14:30:18.585Z"
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "example": "2024-02-16T14:30:18.585Z"
+                    },
+                    "updatedAt": {
+                      "type": "string",
+                      "example": "2024-02-16T14:37:50.746Z"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "example": "08c04a8d-94b4-4136-ad4c-db9c73eb7197"
+                    },
+                    "company_id": {
+                      "type": "string",
+                      "example": "2ee5582c-b34c-4a48-af9f-3f2c4c5d4df4"
+                    },
+                    "title": {
+                      "type": "string",
+                      "example": "Dev C++"
+                    },
+                    "description": {
+                      "type": "string",
+                      "example": "C++"
+                    },
+                    "location": {
+                      "type": "string",
+                      "example": "Remote"
+                    },
+                    "notes": {
+                      "type": "string",
+                      "example": "A"
+                    },
+                    "status": {
+                      "type": "string",
+                      "example": "archived"
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "example": "2024-02-16T14:30:18.585Z"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "example": "2024-02-16T14:30:18.585Z"
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "example": "2024-02-16T14:30:18.585Z"
+                    },
+                    "updatedAt": {
+                      "type": "string",
+                      "example": "2024-02-16T14:37:50.746Z"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Job Status is archived!"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 400
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Job Status is archived!"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 400
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "ERROR"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 500
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "ERROR"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 500
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "token": []
+          }
+        ]
+      }
+    },
+    "/v1/feed/": {
+      "get": {
+        "tags": [
+          "feed"
+        ],
+        "description": "Endpoint to list file from AWS or cache.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "ERROR"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 500
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "ERROR"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 500
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/feed/generateFeed": {
+      "get": {
+        "tags": [
+          "feed"
+        ],
+        "description": "Endpoint to generate file.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "ERROR"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 500
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "ERROR"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 500
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/companies/": {
+      "get": {
+        "tags": [
+          "companies"
+        ],
+        "description": "Endpoint to list companies.",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "example": "84fec672-f25f-4d92-92eb-fcb80a3c4f1f"
+                      },
+                      "name": {
+                        "type": "string",
+                        "example": "ACME Enterprises"
+                      },
+                      "created_at": {
+                        "type": "string",
+                        "example": "2024-02-16T13:03:03.424Z"
+                      },
+                      "updated_at": {
+                        "type": "string",
+                        "example": "2024-02-16T13:03:03.424Z"
+                      },
+                      "createdAt": {
+                        "type": "string",
+                        "example": "2024-02-16T13:03:03.424Z"
+                      },
+                      "updatedAt": {
+                        "type": "string",
+                        "example": "2024-02-16T13:03:03.424Z"
+                      }
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "example": "84fec672-f25f-4d92-92eb-fcb80a3c4f1f"
+                      },
+                      "name": {
+                        "type": "string",
+                        "example": "ACME Enterprises"
+                      },
+                      "created_at": {
+                        "type": "string",
+                        "example": "2024-02-16T13:03:03.424Z"
+                      },
+                      "updated_at": {
+                        "type": "string",
+                        "example": "2024-02-16T13:03:03.424Z"
+                      },
+                      "createdAt": {
+                        "type": "string",
+                        "example": "2024-02-16T13:03:03.424Z"
+                      },
+                      "updatedAt": {
+                        "type": "string",
+                        "example": "2024-02-16T13:03:03.424Z"
+                      }
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Companies were not found!"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 400
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Companies were not found!"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 400
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "ERROR"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 500
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "ERROR"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 500
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "token": []
+          }
+        ]
+      }
+    },
+    "/v1/companies/{id}": {
+      "get": {
+        "tags": [
+          "companies"
+        ],
+        "description": "Endpoint to list a specific company.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "example": "5a655ed8-2cee-4e9b-8fe2-b9c8c884f512"
+                      },
+                      "name": {
+                        "type": "string",
+                        "example": "ABC Corp"
+                      },
+                      "created_at": {
+                        "type": "string",
+                        "example": "2024-02-16T13:03:03.424Z"
+                      },
+                      "updated_at": {
+                        "type": "string",
+                        "example": "2024-02-16T13:03:03.424Z"
+                      },
+                      "createdAt": {
+                        "type": "string",
+                        "example": "2024-02-16T13:03:03.424Z"
+                      },
+                      "updatedAt": {
+                        "type": "string",
+                        "example": "2024-02-16T13:03:03.424Z"
+                      }
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "example": "5a655ed8-2cee-4e9b-8fe2-b9c8c884f512"
+                      },
+                      "name": {
+                        "type": "string",
+                        "example": "ABC Corp"
+                      },
+                      "created_at": {
+                        "type": "string",
+                        "example": "2024-02-16T13:03:03.424Z"
+                      },
+                      "updated_at": {
+                        "type": "string",
+                        "example": "2024-02-16T13:03:03.424Z"
+                      },
+                      "createdAt": {
+                        "type": "string",
+                        "example": "2024-02-16T13:03:03.424Z"
+                      },
+                      "updatedAt": {
+                        "type": "string",
+                        "example": "2024-02-16T13:03:03.424Z"
+                      }
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Companies were not found!"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 400
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Companies were not found!"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 400
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "ERROR"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 500
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "ERROR"
+                    },
+                    "status": {
+                      "type": "number",
+                      "example": 500
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "token": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "token": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "Authorization",
+        "description": "Token access"
+      },
+      "apiKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "Authorization",
+        "description": "Token access"
+      }
+    }
+  }
+}
