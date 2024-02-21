@@ -2,7 +2,7 @@ const useCaseGetCompanies = require("../use-cases/companies/getCompanies");
 const useCaseGetFindByIdCompanies = require("../use-cases/companies/getFindByIdCompany");
 
 module.exports = {
-  getCompanies: async (_, res) => {
+  getCompanies: async (req, res) => {
     try {
       const result = await useCaseGetCompanies.list()
       return res.status(200).json(result);
