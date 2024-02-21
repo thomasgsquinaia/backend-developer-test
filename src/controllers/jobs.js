@@ -14,7 +14,6 @@ module.exports = {
         location:req.body.location,
         notes:req.body.notes
       };
-      await useCaseCreateJob.verifyInput(input)
       const result = await useCaseCreateJob.create(input)
       return res.status(201).json(result);
     } catch (err) {
@@ -40,7 +39,6 @@ module.exports = {
         location:req.body.location,
         description:req.body.description
       }
-      await useCaseUpdateJob.verifyInput(input)
       const result = await useCaseUpdateJob.update(input,job_id)
       return res.status(201).json(result);
     } catch (err) {
