@@ -80,7 +80,19 @@ http://ec2-54-94-2-165.sa-east-1.compute.amazonaws.com/v1/doc/
 
 ## Testing
 
-1. Run the project: 
+1. Run docker-compose down:
+
+```bash
+docker-compose down
+```
+
+2. Run docker-compose up:
+
+```bash
+docker-compose up
+```
+
+3. Run the project: 
 
 ```bash
 npm run dev
