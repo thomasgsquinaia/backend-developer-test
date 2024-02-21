@@ -1,0 +1,14 @@
+version: "3"
+services:
+ postgres:
+   image: postgres
+   restart: always
+   ports:
+     - "5433:5432"
+   volumes:
+     - ./ddl/models.sql:/docker-entrypoint-initdb.d/setup.sql
+     - ./database:/var/lib/postgresql
+   environment:
+     POSTGRES_DB: "postgres"
+     POSTGRES_USER: "postgres"
+     POSTGRES_PASSWORD: "Postgres2022!"
