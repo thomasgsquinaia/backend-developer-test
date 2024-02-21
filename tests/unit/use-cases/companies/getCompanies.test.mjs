@@ -25,7 +25,6 @@ describe("Should test Companies", () => {
     it('Should test were not found companies', async () => {
         try {
             const allCompanies = await Companies.findAll();
-            console.log(allCompanies);
             expect(allCompanies).toHaveLength(0)
             if(allCompanies.length > 0) {
                 throw new Error("Companies were not found")
