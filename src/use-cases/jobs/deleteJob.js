@@ -7,7 +7,7 @@ module.exports = {
       const job = await Jobs.findOne({ where: { id: job_id } });
       if (!job) {
         throw ({ 
-            message: "Job is not find!", 
+            message: "Job is not found!", 
             status: 404 
         });
       }

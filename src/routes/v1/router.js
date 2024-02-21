@@ -6,7 +6,7 @@ const router = Router();
 const swaggerUi = require("swagger-ui-express");
 const swaggerDocument = require("../../../docs/swagger.json");
 router.use("/jobs", jobs);
-router.use("/feed", feed);
 router.use("/companies", companies);
+router.use("/feed", feed);
 router.use("/doc", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 module.exports = router;

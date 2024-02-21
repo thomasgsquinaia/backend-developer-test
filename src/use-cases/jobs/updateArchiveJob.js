@@ -7,7 +7,7 @@ module.exports={
             const job = await Jobs.findOne({where: {id: job_id}})
             if(job.dataValues.status == "archived"){
               throw ({
-                message:"Job Status archived!", 
+                message:"Job 'status' archived!", 
                 status: 400
               });
             }

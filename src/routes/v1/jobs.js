@@ -178,7 +178,7 @@ router.delete("/:job_id", jobController.deleteJob
     #swagger.responses[400] = {
             description: "BAD_REQUEST",
             schema: {
-                message:"Job is not find!",
+                message:"Job is not found!",
                 status:400
             }
     }
