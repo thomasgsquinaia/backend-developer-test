@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const jobs = require("./job");
+const jobs = require("./jobs");
 const feed = require("./feed");
 const companies = require("./companies");
 const router = Router();
